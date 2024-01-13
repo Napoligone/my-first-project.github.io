@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block css_additional %}
+
+{% endblock %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet"href="./static/main/css/index.css">
+        <div class="header" >
+            <h1>  Лучший автосервис в городе </h1>
+        </div>
+        <div class="header1 ">
+            <h5> Техническое обслуживание и ремонт автомобилей </h5>
+        </div>
+    {% if tasks %}
+        {% for el in tasks %}
+            <div class="alert alert-primary" role="alert">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+    <p>Записей нет</p>
+    {% endif %}
+<section class="video-section">
+    <div class="container">
+        <div class="video-wrapper">
+            <div class="video-row row">
+                <div class="section-title col-lg-6">
+                    <span class="sub-title"> Видео</span>
+                    <h2> Наша работа </h2>
+                </div>
+            </div>
+            <ul class="video-content-row row">
+            <li class="tetra-block col-lg-4">
+                <iframe height="228" src="https://www.youtube.com/embed/AwfkCcdldKw" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </li><li class="tetra-block col-lg-4">
+                <iframe width="300" height="228" src="https://www.youtube.com/embed/iQw-I8BTUMo?si=IB7LnnTDaWxHA7Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </li><li class="tetra-block col-lg-4">
+                <iframe width="300" height="228" src="https://www.youtube.com/embed/8RJl8A7QPHk?si=_TwdVSG3uttflHJ1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
